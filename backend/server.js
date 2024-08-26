@@ -4,10 +4,9 @@ import dotenv from 'dotenv';
 import { notFound,errorHandler } from './middleware/errorMiddleware.js';
 import productRoutes from './routes/productRoutes.js'
 dotenv.config();
-
 import connectDB from './config/db.js';
 connectDB();
-const port=process.env.PORT || 5000;
+const port=process.env.PORT || 6000;
 const app=express();
 app.get('/',(req,res)=>{
     res.send("Running");
@@ -20,3 +19,4 @@ app.use(errorHandler);
 app.listen(port,()=>{
     console.log(`App is running on port ${port}`);
 })
+console.log(port);
